@@ -3,11 +3,11 @@ import os
 
 def is_jpeg(file_path):
     with open(file_path, 'rb') as file:
-        header = file.read(3)
+        header = file.read(2)
         return header == b'\xFF\xD8'
 
 
-directory = 'E:\\random_files'
+directory = 'C:\\Users\\alkaw\\PycharmProjects\\searching-for-jpeg-files-juagij\\random_file'
 
 for file in os.listdir(directory):
     file_path = os.path.join(directory, file)
