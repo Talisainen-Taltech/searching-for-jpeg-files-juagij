@@ -13,7 +13,9 @@ for file in os.listdir(directory):
     file_path = os.path.join(directory, file)
     if os.path.isfile(file_path):
         if is_jpeg(file_path):
-            print(f'{file} is JPEG')
+            new_file_path = file_path + ".jpg"
+            os.rename(file_path, new_file_path)
+            print(f'{file} -> {file}.jpg (renamed)')
         else:
             os.remove(file_path)
             print(f'{file} deleted')
